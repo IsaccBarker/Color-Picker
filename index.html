@@ -1,1 +1,36 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"> 
+		<title>Color Picker</title>
+
+		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+		<style>
+		.foo {
+			font-family: 'Poppins', sans-serif;
+			text-align: center;
+		}
+		</style>
+
+		<script
+			  src="https://code.jquery.com/jquery-3.5.1.js"
+			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+			  crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function() {
+				var r = Math.floor(Math.random() * (256));
+				var g = Math.floor(Math.random() * (256));
+				var b = Math.floor(Math.random() * (256));
+
+				document.body.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+				document.getElementById("display").innerHTML = "{" + r + ", " + g + ", " + b + "}";
+			});
+		</script>
+	</head>
+	<body>
+		<h1 class="foo">Teo's Color Picker</h1>
+		<!-- Submit is seperate because we need to send it to a Javascript function. -->
+		<p id="display" class="foo"></p>
+	</body>
+</html>
